@@ -220,13 +220,7 @@ func storybookComponent(componentName string) string {
 		fmt.Sprintf("import %v from \"./%v\";\n\n", componentName, componentName),
 		fmt.Sprintf("const meta: Meta<typeof %v> = {\n", componentName),
 		fmt.Sprintf("\tcomponent: %v,\n", componentName),
-		fmt.Sprintf("\targs: {\n\t\tchildren: \"%v\",\n\t},\n", componentName),
-		"};\n\n",
-		fmt.Sprintf("type Story = StoryObj<typeof %v>;\n\n", componentName),
-		"export const Primary: Story = {\n",
-		"\targs: {},\n",
-		"};\n\n",
-		"export default meta;\n",
+		"\targs: {\n\t\tchildren: \"A demo button\",\n\t\tstate: \"\tsolid\",\n\t\tsize: \"content\",\n\t},\n};\n\ntype Story = StoryObj<typeof Button>;\n\nexport const Solid: Story = {\n\targs: {},\n};\n\nexport const Warning: Story = {\n\targs: {\n\t\tstate: \"warning\",\n\t},\n};\n\nexport const Outlined: Story = {\n\targs: {\n\t\tstate: \"outline\",\n\t},\n};\n\nexport const Ghost: Story = {\n\targs: {\n\t\tstate: \"ghost\",\n\t},\n};\n\nexport const FullWidth: Story = {\n\targs: {\n\t\tstate: \"solid\",\n\t\tsize: \"stretch\",\n\t},\n};\n\nexport default meta;",
 	}
 
 	content := strings.Join(lines, "")
