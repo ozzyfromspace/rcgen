@@ -260,7 +260,7 @@ func folderIndexFile(componentName string) string {
 }
 
 func mainIndexFile(componentName string) string {
-	return "//export all your component levels here\n// for example: export * as L0 from \"./L0\";\n"
+	return "// export all your component levels here\n// for example: export * as L0 from \"./L0\";\n"
 }
 
 func cnFile(componentName string) string {
