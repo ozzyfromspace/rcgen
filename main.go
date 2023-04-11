@@ -96,25 +96,25 @@ func buildFolder(level int64, name string, root string) error {
 	if err := createFile(folderComponentName, name, ".tsx", reactComponent, false); err != nil {
 		return err
 	} else {
-		log.Printf("created file at %v.tsx\n", folderComponentName)
+		log.Printf("created file at %v/%v.tsx\n", folderComponentName, name)
 	}
 
 	if err := createFile(folderComponentName, name, ".stories.tsx", storybookComponent, false); err != nil {
 		return err
 	} else {
-		log.Printf("created file at %v.stories.tsx\n", folderComponentName)
+		log.Printf("created file at %v/%v.stories.tsx\n", folderComponentName, name)
 	}
 
 	if err := createFile(folderComponentName, name, ".test.tsx", testingFile, false); err != nil {
 		return err
 	} else {
-		log.Printf("created file at %v.test.tsx\n", folderComponentName)
+		log.Printf("created file at %v/%v.test.tsx\n", folderComponentName, name)
 	}
 
 	if err := createFile(folderComponentName, name, ".ts", folderIndexFile, true); err != nil {
 		return err
 	} else {
-		log.Printf("created file at %v.ts\n", folderComponentName)
+		log.Printf("created file at %v/index.ts\n", folderComponentName)
 	}
 
 	if _, err := os.Stat(rootIndexFile); os.IsNotExist(err) {
