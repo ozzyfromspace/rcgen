@@ -9,7 +9,6 @@ import (
 	"strings"
 )
 
-// .rcgen
 type Config struct {
 	PathToFolder string
 }
