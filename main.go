@@ -207,6 +207,8 @@ func reactComponent(componentName string) string {
 		fmt.Sprintf("\tconst style = cn(%vVariants({ size, state, className }));\n\n", lowerCaseComponentName),
 		"\treturn <button ref={ref} className={style} {...rest} />\n",
 		"});\n\n",
+		fmt.Sprintf("%v.displayName = \"%v\"\n\n;", componentName, componentName),
+
 		fmt.Sprintf("export default %v;\n", componentName),
 	}
 
